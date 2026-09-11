@@ -1,5 +1,6 @@
 
 import './App.css'
+import { Banner } from './Component/Banner/Banner'
 import { Nav } from './Component/Nav/Nav'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <Nav></Nav>
+      <Banner></Banner>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "../../assets/logo-text.png";
+import MobileNav from "./mobileres";
 
 
 export function Nav() {
@@ -88,7 +89,7 @@ export function Nav() {
           </button>
         </div>
       </div>
-
+      <MobileNav isOpen={isOpen} />
     </nav>
   );
 }
