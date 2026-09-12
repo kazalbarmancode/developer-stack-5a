@@ -9,9 +9,11 @@ const Technologies = ({ dataPromise}: TechnologiesProps) => {
     const datas = use(dataPromise)
     
     return (
-        <div>
-            {datas.map(data=><p>{data.category}</p> )}
-        </div>
+        <div >
+     {
+        datas.map(data=><p>{data.icon}</p> )
+     }
+    </div>
     )
 }
 
