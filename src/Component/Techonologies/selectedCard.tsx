@@ -1,6 +1,7 @@
 
 import type { Dispatch, SetStateAction } from "react";
 import type { TechnologiesDataType } from "../Types/Types";
+import { Bounce, toast } from "react-toastify";
 
 
 interface SelectedStackProps {
@@ -9,22 +10,37 @@ interface SelectedStackProps {
 }
 
 export default function SelectedStack({
-   
+  
   selectedStack,
   setSelectedStack
 }: SelectedStackProps) {
 
     const handleRemove = (id: string | number) => {
     setSelectedStack(selectedStack.filter((item) => item.id !== id));
+    toast.info(`${name} removed from your stack!`, {
+      position: "top-right",
+      autoClose: 3000,
+      transition: Bounce,
+    });
   };
 
   const handleRemoveAll = () => {
     setSelectedStack([]);
+    toast.error("All items removed from your stack!", {
+      position: "top-right",
+      autoClose: 3000,
+      transition: Bounce,
+    });
   };
   return (
     <div className=" rounded-2xl p-5 bg-white shadow-sm h-fit">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col mb-4">
         <h2 className="text-xl font-bold text-gray-800">Your Stack</h2>
+       { selectedStack.length > 0 && (
+            <span className="text-xs text-purple-600 font-semibold">
+              {selectedStack.length} {selectedStack.length === 1 ? "Technology" : "Technologies"} Selected
+            </span>
+          )}
         
       </div>
 

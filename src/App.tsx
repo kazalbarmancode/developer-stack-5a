@@ -1,4 +1,5 @@
 
+import { Suspense } from 'react'
 import './App.css'
 import { Banner } from './Component/Banner/Banner'
 import Footer from './Component/Footer/Footer'
@@ -20,7 +21,11 @@ function App() {
     <>
       <Nav></Nav>
       <Banner></Banner>
-      <Technologies dataPromise={dataPromise}></Technologies>
+      <Suspense fallback={<div className="flex flex-col justify-center items-center min-h-[60vh] w-full">
+<div className="w-14 h-14 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin"></div>
+      </div>}>
+        <Technologies dataPromise={dataPromise}></Technologies>
+      </Suspense>
       <Footer></Footer>
     </>
   )

@@ -1,6 +1,7 @@
 import { IoMdStar } from "react-icons/io";
 import type { TechnologiesDataType } from "../Types/Types";
 import type { Dispatch, SetStateAction } from "react";
+import { Bounce, toast } from "react-toastify";
 
 export interface TechnologiesCardProps {
   data: TechnologiesDataType;
@@ -16,7 +17,32 @@ export default function TechnologiesCard({
   const handleAddToStack = () => {
     const addDataStack = selectedStack.find((item) => item.id === data.id);
     if (!addDataStack) {
-      setSelectedStack([...selectedStack, data]);
+      setSelectedStack([...selectedStack, data]); 
+      toast.success(`${data.name} added to your stack!`,{
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      })
+    }
+     else{
+      
+      toast.warning(`${data.name} is already in your stack!`,{
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      })
     }
   };
   const isAdded = Boolean(selectedStack.find((item) => item.id === data.id));
@@ -54,7 +80,7 @@ export default function TechnologiesCard({
         disabled={isAdded}
         className={`w-full mt-2 font-medium py-2 rounded-xl  ${
           isAdded
-            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+            ? "bg-gray-300 text-gray-500"
             : "bg-black hover:bg-gray-800 text-white"
         }`}
       >
