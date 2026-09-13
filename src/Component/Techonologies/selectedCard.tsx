@@ -17,7 +17,7 @@ export default function SelectedStack({
 
     const handleRemove = (id: string | number) => {
     setSelectedStack(selectedStack.filter((item) => item.id !== id));
-    toast.info(`${name} removed from your stack!`, {
+    toast.info(`${id} removed from your stack!`, {
       position: "top-right",
       autoClose: 3000,
       transition: Bounce,

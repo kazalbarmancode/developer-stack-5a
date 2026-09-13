@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# 🚀 Dev Stack Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An interactive, responsive technology exploration web application built with **React 19**, **TypeScript**, and **Tailwind CSS**. Developers can explore frontend  add technologies to build  remove them dynamically with real-time feedback using **React-Toastify**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
 
-## React Compiler
+- 🎨 **Modern & Responsive UI**: Built with a sticky nav ber, interactive banner section, gradient headings, and a responsive footer.
+- 📱 **Mobile Drawer Navigation**: Responsive navigation bar with Hamburger Toggle Button.
+- ⚡ **React 19 Suspense & Data Fetching**: Uses the new React 19 `use()` hook combined with `<Suspense>` for asynchronous data handling with a centered loader spinner.
+- 🛠️ **Custom Tech Stack Builder**:
+  - Add technology items to "Your Stack" list.
+  - Dynamically updates selected items count and item details.
+  - Automatically disables already-added technologies on the card UI.
+- 🔔 **Toast Notifications**: Interactive toast alerts (via `react-toastify`) for:
+  - Adding a technology to the stack (`toast.success`)
+  - Attempting duplicate additions (`toast.warning`)
+  - Removing a single technology (`toast.info`)
+  - Clearing the entire stack (`toast.error`)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Tech Stack & Dependencies
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- **Framework**: React 19 (TypeScript)
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons (`react-icons/io`)
+- **Notifications**: React-Toastify
